@@ -79,7 +79,8 @@ JB :
   # Set 'provider' to false to turn commenting off globally.
   #
   comments :
-    provider : disqus
+    #provider : disqus
+    provider : denglu
     disqus :
       short_name : liuweifeng-github
     livefyre :
@@ -91,6 +92,8 @@ JB :
       num_posts: 5
       width: 580
       colorscheme: light
+    denglu :
+      appid : 4169dengpzAuCgDSOwbF1TzROfKvz6
 
   # Settings for analytics helper
   # Set 'provider' to the analytics provider you want to use.

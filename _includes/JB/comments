@@ -1,6 +1,8 @@
 {% if site.JB.comments.provider and page.comments != false %}
 
 {% case site.JB.comments.provider %}
+{% when "denglu" %}
+  {% include JB/comments-providers/denglu %}
 {% when "disqus" %}
   {% include JB/comments-providers/disqus %}
 {% when "livefyre" %}
