@@ -51,6 +51,7 @@ init.js
       var $ = require('jquery');
       // do something with jQuery
     });
+
 ###jQuery 插件的模块化
 
 jQuery 提供了 DOM 操作功能，在实际应用中，我们还需要 cookie, template, storage 等等一系列功能。这时可以从 jQuery 社区中寻找各种插件来完成。大部分插件通过 [jQuery 插件的模块化](http://lifesinger.wordpress.com/2011/05/18/jquery-plugins-modulization/) 一文中提供的方法封装就好。

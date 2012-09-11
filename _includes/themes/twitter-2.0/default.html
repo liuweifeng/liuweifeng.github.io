@@ -87,9 +87,9 @@
         var start = 3;
         var icons = ['th-large','th','th-list','list'];
         titles.each(function(i,e){
-          e.setAttribute('id','t_' + i);
+          // e.setAttribute('id','t_' + i);
           var leave = parseInt(e.tagName.toUpperCase().replace('H','')) - start;
-          ul.append('<li'+(i==0?' class="active"':'')+' style="text-indent:'+(leave*10)+'px"><a href="#t_' + i + '"><i class="icon-chevron-right"></i> '+e.innerHTML+'</a></li>');
+          ul.append('<li'+(i==0?' class="active"':'')+' style="text-indent:'+(leave*10)+'px"><a href="#' + e.getAttribute('id') + '"><i class="icon-chevron-right"></i> '+e.innerHTML+'</a></li>');
         });
         $('#content_guide').affix({offset:200});
       }
