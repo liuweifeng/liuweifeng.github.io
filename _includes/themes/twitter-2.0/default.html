@@ -12,15 +12,16 @@
     <![endif]-->
 
     <!-- Le styles -->
-    <link href="{{ ASSET_PATH }}/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://lib.sinaapp.com/js/bootstrap/2.1.1/css/bootstrap.min.css" rel="stylesheet">
     <style type="text/css" media="screen">
       body {
         padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
       }
     </style>
-    <link href="{{ ASSET_PATH }}/css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="http://lib.sinaapp.com/js/bootstrap/2.1.1/css/bootstrap-responsive.min.css" rel="stylesheet">
     <link href="{{ ASSET_PATH }}/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
-
+    <!--<link href="{{ ASSET_PATH }}/css/syntax.css" rel="stylesheet">-->
+    <link href="{{ ASSET_PATH }}/css/prettify.css" type="text/css" rel="stylesheet" />
     <!-- Le fav and touch icons -->
   <!-- Update these with your own images
     <link rel="shortcut icon" href="images/favicon.ico">
@@ -69,7 +70,31 @@
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="{{ ASSET_PATH }}/js/jquery.min.js"><\/script>')</script>
-    <script src="{{ ASSET_PATH }}/js/bootstrap.min.js"></script>
+    <script src="http://lib.sinaapp.com/js/bootstrap/2.1.1/js/bootstrap.min.js"></script>
+    <script src="{{ ASSET_PATH }}/js/prettify.js"></script>
+    <script>
+    (function(){
+      $('table').addClass('table table-striped table-bordered table-hover');
+      $('pre').addClass('prettyprint');
+      prettyPrint();
+      $('[href^=#]').click(function (e) {
+      e.preventDefault()
+    })
+      var titles = $('.content').find('.span8').first().find('h1,h2,h3,h4,h5,h6');
+      if(titles.size() > 1){
+        var ul = $('<ul id="content_guide" class="nav nav-list bs-docs-sidenav"></ul>');
+        ul.appendTo('#sideBar');
+        var start = 3;
+        var icons = ['th-large','th','th-list','list'];
+        titles.each(function(i,e){
+          e.setAttribute('id','t_' + i);
+          var leave = parseInt(e.tagName.toUpperCase().replace('H','')) - start;
+          ul.append('<li'+(i==0?' class="active"':'')+' style="text-indent:'+(leave*10)+'px"><a href="#t_' + i + '"><i class="icon-chevron-right"></i> '+e.innerHTML+'</a></li>');
+        });
+        $('#content_guide').affix({offset:200});
+      }
+    })();
+    </script>
     {% include JB/analytics %}
   </body>
 </html>

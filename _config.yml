@@ -9,7 +9,7 @@ pygments: true
 # Themes are encouraged to use these universal variables 
 # so be sure to set them if your theme uses them.
 #
-title : 刘巍峰的博客
+title : 巍峰笔记
 tagline: 关注移动互联网前端开发
 author :
   name : liuweifeng
