@@ -31,7 +31,7 @@
   -->
   </head>
 
-  <body>
+  <body data-spy="scroll" data-target=".bs-docs-sidebar">
 
     <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
@@ -72,29 +72,7 @@
     <script>window.jQuery || document.write('<script src="{{ ASSET_PATH }}/js/jquery.min.js"><\/script>')</script>
     <script src="http://lib.sinaapp.com/js/bootstrap/2.1.1/js/bootstrap.min.js"></script>
     <script src="{{ ASSET_PATH }}/js/prettify.js"></script>
-    <script>
-    (function(){
-      $('table').addClass('table table-striped table-bordered table-hover');
-      $('pre').addClass('prettyprint');
-      prettyPrint();
-      $('[href^=#]').click(function (e) {
-      e.preventDefault()
-    })
-      var titles = $('.content').find('.span8').first().find('h1,h2,h3,h4,h5,h6');
-      if(titles.size() > 1){
-        var ul = $('<ul id="content_guide" class="nav nav-list bs-docs-sidenav"></ul>');
-        ul.appendTo('#sideBar');
-        var start = 3;
-        var icons = ['th-large','th','th-list','list'];
-        titles.each(function(i,e){
-          // e.setAttribute('id','t_' + i);
-          var leave = parseInt(e.tagName.toUpperCase().replace('H','')) - start;
-          ul.append('<li'+(i==0?' class="active"':'')+' style="text-indent:'+(leave*10)+'px"><a href="#' + e.getAttribute('id') + '"><i class="icon-chevron-right"></i> '+e.innerHTML+'</a></li>');
-        });
-        $('#content_guide').affix({offset:200});
-      }
-    })();
-    </script>
+    <script src="{{ ASSET_PATH }}/js/application.js"></script>
     {% include JB/analytics %}
   </body>
 </html>
