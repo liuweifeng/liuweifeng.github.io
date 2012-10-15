@@ -3,7 +3,7 @@ layout: post
 title: "Hello World"
 tagline: "first article of this blog"
 description: "my first article of github blog"
-category:   Life
+category:  Life
 tags: []
 ---
 {% include JB/setup %}
