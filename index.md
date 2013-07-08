@@ -11,7 +11,6 @@ title: "巍峰笔记"
 <ul class="posts nav nav-pills nav-stacked">
   {% for post in site.posts %}
     <li><span>{{ post.date | date: "%Y-%m-%d" }}</span> &raquo; <a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></li>
-    <!-- <p>{{ post.content | truncatehtml:2000 }}</p> -->
   {% endfor %}
 </ul>
 {% if paginator.previous_page && paginator.next_page%}
