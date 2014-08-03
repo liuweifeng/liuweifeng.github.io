@@ -5,7 +5,6 @@ description: ""
 category: dev
 tags: [JavaScript]
 ---
-{% include JB/setup %}
 
 >UglifyJS是基于 NodeJS 的 JavaScript 语法解析/压缩/格式化工具。它在保留语义的同时会尽量提高压缩比率。
 

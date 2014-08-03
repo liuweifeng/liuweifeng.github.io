@@ -6,6 +6,5 @@ description: "my first article of github blog"
 category:  Life
 tags: []
 ---
-{% include JB/setup %}
 
 ###你好，世界。Hello World

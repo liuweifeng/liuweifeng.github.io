@@ -5,7 +5,6 @@ description: "如何升级 Mac OS X Lion 上的 git"
 category: dev
 tags: [git]
 ---
-{% include JB/setup %}
 
 Mac OS X Lion 下使用 `which git` 查看 `git` 发现位于 `/usr/bin/git` 目录下，可能是安装 `Xcode 4.5.1`时一起装上来的，版本是 1.7.10.2。
 

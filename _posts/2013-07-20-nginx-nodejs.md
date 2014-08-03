@@ -4,9 +4,13 @@ title: "Nginx 反向代理 Node.js"
 description: "my first article of github blog"
 category:  Dev
 tags: [nodejs]
+image:
+  feature: abstract-3.jpg
+  credit: dargadgetz
+  creditlink: http://www.dargadgetz.com/ios-7-abstract-wallpaper-pack-for-iphone-5-and-ipod-touch-retina/
+comments: 1
+share: 1
 ---
-{% include JB/setup %}
-
 修改 Nginx 配置文件：
 
     subl /usr/local/etc/nginx/nginx.conf
@@ -36,4 +40,3 @@ tags: [nodejs]
 查看 Nginx 版本号
 
     ps -ef | grep nginx
-

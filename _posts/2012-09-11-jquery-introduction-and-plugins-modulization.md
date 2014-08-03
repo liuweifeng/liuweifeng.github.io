@@ -2,10 +2,9 @@
 layout: post
 title: "jQuery 模块介绍与 jQuery 插件的深度模块化"
 description: ""
-category: 
+category:
 tags: [jQuery]
 ---
-{% include JB/setup %}
 
 原文地址：http://lifesinger.wordpress.com/2011/08/19/jquery-introduction-and-plugins-modulization，作者玉伯。本文为其镜像。
 
@@ -46,7 +45,7 @@ init.js
         'juery': 'jquery/1.6.1/jquery'
       }
     });
-    
+
     define(function(require, exports, module) {
       var $ = require('jquery');
       // do something with jQuery
@@ -69,7 +68,7 @@ jQuery 提供了 DOM 操作功能，在实际应用中，我们还需要 cookie,
 >假设页面使用到d插件，那么插件a将进行两次初始化，也就是会调用两次
 >
 >    `var $ = require(‘jquery’);`
->    
+>
 >    `require(‘a’)($);`
 >
 >进行插件a的注册，当系统复杂时，重复的插件注册会不会影响系统的性能，同时会不会存在隐患？如插件b对引用的插件a进行了部分功能扩展，当引入插件c的时候又重新注册了插件a，那么插件b对插件a的扩展将不存在了，当然改写插件功能的实际情况也许不会存在，此处只是举个例子，说明隐患的存在。
@@ -87,15 +86,15 @@ jQuery 插件一般可以总结为以下[模板](https://github.com/geetarista/j
       $.fn.PLUGIN = function(options) {
         // snip...
       };
-    
+
       // Public plugin function
       $.fn.PLUGIN.FUNCT = function() {
         // Cool JS action
       };
-    
+
       // Default settings for the plugin
       $.fn.PLUGIN.defaults = { /* snip... */ };
-    
+
       // Private function that is used within the plugin
       // snip...
     })(jQuery);
@@ -112,7 +111,7 @@ jQuery 插件一般可以总结为以下[模板](https://github.com/geetarista/j
     define(function(require, exports) {
       var $ = require('jquery');
       require('some-jquery-plugin')($);
-    
+
       $(sth).PLUGIN(...);
     });
 
@@ -126,23 +125,23 @@ some-jquery-plugin.js:
 
     define(function(require, exports, module) {
       var $ = require('jquery').sub();
-    
+
       // Main plugin function
       $.fn.PLUGIN = function(options) {
         // snip...
       };
-    
+
       // Public plugin function
       $.fn.PLUGIN.FUNCT = function() {
         // Cool JS action
       };
-    
+
       // Default settings for the plugin
       $.fn.PLUGIN.defaults = { /* snip... */ };
-    
+
       // Private function that is used within the plugin
       // snip...
-    
+
       module.exports = $;
     });
 
@@ -152,7 +151,7 @@ some-jquery-plugin.js:
     define(function(require, exports) {
       var $ = require('jquery');
       var PLUGIN = require('some-jquery-plugin');
-    
+
       PLUGIN(sth).PLUGIN(...);
     });
 
@@ -166,7 +165,7 @@ some-jquery-plugin.js:
     define(function(require, exports) {
       var $ = require('jquery');
       var Chosen = require('chosen');
-    
+
       var chosen = new Chosen(selector, options);
       chosen.doSth(...);
     });
@@ -177,24 +176,24 @@ some-jquery-plugin.js:
 
     define(function(require, exports, module) {
       var $ = require('jquery');
-    
+
       // Main plugin function
       function PLUGIN(selector, options) {
         var els = $(selector);
         // snip...
       };
-    
+
       // Public plugin function
       PLUGIN.FUNCT = function() {
         // Cool JS action
       };
-    
+
       // Default settings for the plugin
       PLUGIN.defaults = { /* snip... */ };
-    
+
       // Private function that is used within the plugin
       // snip...
-    
+
       module.exports = PLUGIN;
     });
 
