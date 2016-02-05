@@ -1,9 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'jekyll'
-gem 'kramdown'
-gem 'coderay'
-gem 'rake'
-gem 'thor'
-gem 'activesupport'
-gem 'stringex'
+gem 'jekyll', '~> 3.0'
+gem 'jekyll-sitemap'
+gem 'octopress', '~> 3.0'
+gem 'jekyll-paginate'
