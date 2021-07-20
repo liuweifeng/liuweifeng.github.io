@@ -1,80 +1,45 @@
-title:            巍峰笔记
-description:      关注移动互联网开发
-disqus_shortname: liuweifeng-hithub
-reading_time:     true
-words_per_minute: 200
-# Your site's domain goes here (eg: //mmistakes.github.io, http://mademistakes.com, etc)
-# When testing locally leave blank or use http://localhost:4000
-url:              https://liuweifeng.github.io
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
 
-# Owner/author information
-owner:
-  name:           刘巍峰
-  avatar:         avatar.jpg
-  bio:            "后会无期，今夕请珍惜"
-  email:           sdklwf@gmail.com
-  # Social networking links used in footer. Update and remove as you like.
-  twitter:        liuweifeng
-  facebook:       liuweifeng
-  github:         liuweifeng
-  stackexchange:  
-  linkedin:       
-  instagram:      liuweifeng
-  flickr:         
-  tumblr:         
-  # google plus id, include the '+', eg +mmistakes
-  google_plus:
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+title: 巍峰笔记
+# email: your-email@example.com
+description: >- # this means to ignore newlines until "baseurl:"
+  关注移动互联网开发
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://liuweifeng.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+# twitter_username: liuweifeng
+# github_username:  liuweifeng
 
-# Background image to be tiled on all pages
-background: 
+# Build settings
+markdown: kramdown
+# theme: minima
+remote_theme: "mmistakes/jekyll-theme-basically-basic@1.4.5"
+plugins:
+  - jekyll-feed
+  - jekyll-remote-theme
 
-# Analytics and webmaster tools stuff goes here
-google_analytics:   UA-4030930-3
-google_verify:      
-# https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
-bing_verify:         
-
-# http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-timezone:    Asia/Shanghai
-future:      true
-highlighter: rouge
-markdown:    kramdown
-gems:
-  - jekyll-sitemap
-  - jekyll-paginate
-sass:
-  sass_dir: _sass
-  style: compressed
-
-# https://github.com/mojombo/jekyll/wiki/Permalinks
 permalink:   /:year/:month/:day/:title/
 
-# Amount of post to show on home page
-paginate: 5
-
-kramdown:
-  auto_ids: true
-  footnote_nr: 1
-  entity_output: as_char
-  toc_levels: 1..6
-  enable_coderay: false
-
-  coderay:
-    coderay_line_numbers: nil
-    coderay_line_numbers_start: 1
-    coderay_tab_width: 4
-    coderay_bold_every: 10
-    coderay_css: class
-
-# Octopress
-# Default extensions
-post_ext: md
-page_ext: md
-# Found in _templates/
-post_layout: post
-page_layout: page
-# Format titles with titlecase?
-titlecase: true
-
-include: [".htaccess"]
-exclude: ["lib", "config.rb", "Capfile", "config", "Gemfile", "Gemfile.lock", "README.md", "LICENSE", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules"]
+# Exclude from processing.
+# The following items will not be processed, by default. Create a custom list
+# to override the default setting.
+# exclude:
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/
